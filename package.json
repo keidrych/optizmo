@@ -1,0 +1,60 @@
+{
+	"name": "Optizmo",
+	"version": "0.0.1",
+	"description": "Sample Project",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Keidrych/optizmo-sample.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"files": [
+		"index.js"
+	],
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"generate": "node generate.js"
+	},
+	"xo": {
+		"globals": [
+			"$",
+			"_",
+			"dbError",
+			"config"
+		],
+		"ignores": [
+			"python_modules/"
+		],
+		"prettier": true,
+		"rules": {
+			"camelcase": "off",
+			"generator-star-spacing": "off",
+			"import/no-extraneous-dependencies": "off",
+			"import/no-unassigned-import": "off",
+			"import/no-unresolved": "off",
+			"import/order": "off",
+			"no-warning-comments": "off",
+			"operator-linebreak": "off"
+		},
+		"semicolon": false
+	},
+	"dependencies": {
+		"@nano-sql/adapter-rocksdb": "2.0.7",
+		"@nano-sql/core": "2.3.4",
+		"heartbeats": "5.0.1",
+		"resquire": "1.1.1",
+		"terminal-kit": "1.28.19",
+		"change-case": "3.1.0",
+		"validator": "11.1.0"
+	},
+	"devDependencies": {
+		"faker": "github:Marak/faker.js#master",
+		"node-dev": "4.0.0",
+		"prettier": "1.18.2",
+		"updates": "8.5.1",
+		"xo": "0.24.0"
+	},
+	"engines": {
+		"node": ">=10"
+	}
+}

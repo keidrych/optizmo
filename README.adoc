@@ -1,0 +1,55 @@
+= Optizmo Coding
+
+Sample repository based on requested sample work from Optizmo. 
+
+Features:
+
+* Generate Sample Data: npm run generate
+* No tautological tests: 'all necessary testing already occurs in upstream libraries' data is just piped without manipulation
+* Terminal Gui: Full interactive terminal interface for ease of use
+* https://www.conventionalcommits.org/en/v1.0.0-beta.2[Conventional Commit] Format for Git Messages
+* All code formatted with Prettier and XO for consistent ES6 styling
+* NixOS enabled
+* Package.json compacted, deduped and ready for production deployment
+
+== Deployement
+
+[source,sh]
+----
+git clone https://github.com/Keidrych/optizmo.git
+npm ci
+npm start
+----
+
+Some sample emails of the 50,000 already present in the database:
+
+* Leone.Nitzsche68@gmail.com
+* Quinton_Stanton@hotmail.com
+* Mary.Tremblay43@yahoo.com
+
+== Tests
+
+Unit tests are strictly necessary when data is manipulated
+Integration tests are strictly necessary when verifying an external system works as expected
+
+In most code architecture 3 areas of coding exist:
+* Core (ideally Functional Code)
+* Shell (ideally Imperative Code)
+* Interface (already tested or wouldn't be able to use)
+
+This project uses two interfaces, database and terminal gui. There is no Core code, and the gui exists entirely in the shell.
+
+While its possible to test the Shell, its strictly not needed as the data is passthrough and any immutable interactions are validated at creation.
+
+Should Core code have been required, tests would have been provided.
+
+== Assumptions / Deviations
+
+* There was no specification of what should happen display wise when an unsuccessful email was lodged. Left as empty
+* Some of the sample messages have been expanded upon for more user clarity
+* Suggested workflow tracked the first and second email entered in prompt feedback, as this wasn't expanded any further simplified the wording to be generic no matter how many emails entered
+* no quit command on first page where number is entered. Personally think this should have been part of the specification as application will not terminate in a user friendly manner on first screen.
+
+== Issues
+
+* Terminal Kit needs control over the 'ctrl' key. Depending on the terminal used pressing 'ctrl  V' as a shortcut paste may crash the application. Due to the allocated time for developing this application a bulletproof solution hasn't been included in the code as used terminals are still unknown.
